@@ -1,0 +1,32 @@
+app:
+  id: ari:cloud:ecosystem::app/e570f8d8-729a-489f-a432-019d87972189
+  runtime:
+    name: nodejs22.x
+
+modules:
+  jira:issuePanel:
+    - key: testplan-panel
+      title: TestPlan Builder
+      icon: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+      resource: main
+      resolver:
+        function: resolver
+      render: native
+
+  function:
+    - key: resolver
+      handler: index.run
+
+resources:
+  - key: main
+    path: src/frontend/index.jsx
+
+permissions:
+  scopes:
+    - read:jira-work
+    - write:jira-work
+    - read:jira-user
+  external:
+    fetch:
+      backend:
+        - address: xray.cloud.getxray.app

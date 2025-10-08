@@ -1,0 +1,44 @@
+{
+  "name": "xray-testplan-automation",
+  "version": "1.0.0",
+  "description": "Forge app to automate adding Xray Tests to Test Plans",
+  "main": "index.js",
+  "author": "František Kůst (frankodivenecia@gmail.com)",
+  "keywords": [
+    "forge",
+    "jira",
+    "xray",
+    "automation",
+    "testplan"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frankodivenecia/Forge-Apps"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "forge deploy",
+    "lint": "eslint src/**/* || npm run --silent hook-errors",
+    "hook-errors": "echo '\\x1b[31mThe build failed because a Forge UI hook is being used incorrectly. Forge UI hooks follow the same rules as React Hooks but have their own API definitions. See the Forge documentation for details on how to use Forge UI hooks.\n' && exit 1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-react": "^7.27.1",
+    "babel-loader": "^10.0.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "@forge/api": "^6.1.1",
+    "@forge/bridge": "^5.5.0",
+    "@forge/react": "^11.3.0",
+    "@forge/resolver": "^1.7.0",
+    "@forge/ui": "^1.11.4",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
+}
